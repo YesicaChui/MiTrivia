@@ -5,7 +5,7 @@
     display: block;
 }
 #preguntasTipoAnimal{
-    display: block;
+    display: none;
 }
 
 #preguntasTipoArtefacto{

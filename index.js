@@ -36,16 +36,21 @@ let verRespuesta = () => {
     let alternativaSeleccionadoP1 = document.querySelector("input[name=pregunta1]:checked")
     let alternativaSeleccionadoP2 = document.querySelector("input[name=pregunta2]:checked")
     let alternativaSeleccionadoP3 = document.querySelector("input[name=pregunta3]:checked")
+
+    let tipoPregunta = document.querySelector("input[name=tipoPreguntas]:checked")
+    let respuestasCorrectas =tipoPregunta.value == "tipoAnimal"?[ "gato","guau","4"]:[ "tijera","sarten","reloj"]
+
+
     let respuesta1 = "correcta"
     let respuesta2 = "correcta"
     let respuesta3 = "correcta"
-    if (alternativaSeleccionadoP1.value != "gato") {
+    if (alternativaSeleccionadoP1.value != respuestasCorrectas[0]) {
         respuesta1 = "incorrecta"
     }
-    if (alternativaSeleccionadoP2.value != "guau") {
+    if (alternativaSeleccionadoP2.value != respuestasCorrectas[1]) {
         respuesta2 = "incorrecta"
     }
-    if (alternativaSeleccionadoP3.value != "4") {
+    if (alternativaSeleccionadoP3.value != respuestasCorrectas[3]) {
         respuesta3 = "incorrecta"
     }
     alert(`Pregunta Nº1:${respuesta1}\nPregunta Nº2:${respuesta2}\nPregunta Nº3:${respuesta3}`)
@@ -55,8 +60,18 @@ let verRespuesta = () => {
 let volver = () => {
     let pantalla1 = document.getElementById("pantalla1")
     let pantalla2 = document.getElementById("pantalla2")
+    let divPreguntasTipoAnimal=document.getElementById("preguntasTipoAnimal")
+    let divPreguntasTipoArtefacto=document.getElementById("preguntasTipoArtefacto")
     pantalla1.style.display = "block"
     pantalla2.style.display = "none"
+    divPreguntasTipoAnimal.style.display = "none"
+    divPreguntasTipoArtefacto.style.display = "none"
+
+    //para pintar nuevamente de negro a las respuestas al volver, para jugar de nuevo
+    let respuestasCorrectas = document.getElementsByClassName("respuestaCorrecta")
+    for(let respuestaCorrecta of respuestasCorrectas){
+        respuestaCorrecta.style.color = "black"
+    }
 }
 
 let irPantalla2 = () => {
@@ -64,7 +79,7 @@ let irPantalla2 = () => {
     let pantalla2 = document.getElementById("pantalla2")
     pantalla1.style.display = "none"
     pantalla2.style.display = "block"
-    
+
 }
 let iniciarJuego = () => {
     let inputNombre = document.getElementById("inputNombre")
@@ -81,27 +96,33 @@ let iniciarJuego = () => {
 
 
 }
-let preguntaEleccion =()=>{
-   let tipoPregunta = document.querySelector("input[name=tipoPreguntas]:checked")
-   let alternativa = "marcada"
-   if(tipoPregunta=tipoPregunta){
-    alternativa.style.display = "none"
-    
-   }else{
-    tipoArtefacto.style.display = "block"
-   }
+let preguntaEleccion = () => {
+    let tipoPregunta = document.querySelector("input[name=tipoPreguntas]:checked")
+    let divPreguntasTipoAnimal = document.getElementById("preguntasTipoAnimal")
+    let divPreguntasTipoArtefacto = document.getElementById("preguntasTipoArtefacto")
+    //let alternativa = "marcada"
+    if (tipoPregunta.value == "tipoAnimal") {
+        divPreguntasTipoAnimal.style.display = "block"
+
+    } else {
+        divPreguntasTipoArtefacto.style.display = "block"
+    }
 
 }
 
 
 function MostrarRespuestas() {
     //alert("karen llorona")
-    let labelRes1 = document.getElementById("res1")
+/*     let labelRes1 = document.getElementById("res1")
     let labelRes2 = document.getElementById("res2")
     let labelRes3 = document.getElementById("res3")
     labelRes1.style.color = "green"
     labelRes2.style.color = "green"
-    labelRes3.style.color = "green"
+    labelRes3.style.color = "green" */
+    let respuestasCorrectas = document.getElementsByClassName("respuestaCorrecta")
+    for(let respuestaCorrecta of respuestasCorrectas){
+        respuestaCorrecta.style.color = "green"
+    }
 }
 
 /* let cambiarPantalla=()=>{
@@ -138,7 +159,7 @@ let botonVolver = document.querySelector("#botonVolver")
 botonVolver.addEventListener("click", volver/* cambiarPantalla */)
 
 let tipoArtefacto = document.querySelector("#tipoArtefactos")
-tipoArtefacto.addEventListener("click",preguntaEleccion)
+tipoArtefacto.addEventListener("click", preguntaEleccion)
 
 
 
