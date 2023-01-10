@@ -1,0 +1,20 @@
+#pantalla2{
+    display: none;
+}
+#pantalla1{
+    display: block;
+}
+#preguntasTipoAnimal{
+    display: block;
+}
+
+#preguntasTipoArtefacto{
+    display: none;
+}
+
+/* .verElemento{
+    display: block;
+}
+.ocultarElemento{
+    display: none;
+} */

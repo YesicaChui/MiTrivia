@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="verElemento" id="pantalla1">
+        <h2>Bienvenido a la Trivia</h2>
+        <label for="">Ingrese su Nombre</label>
+        <br>
+        <br>
+        <input id="inputNombre" type="text">
+        <br>
+        <br>
+
+        <input type="radio" name="tipoPreguntas" id="tipoAnimal">
+        <label for="tipoAnimal">Preguntas de Animales</label>
+        <br>
+        <input type="radio" name="tipoPreguntas" id="tipoArtefactos">
+        <label for="tipoArtefactos">Preguntas de Artefactos</label>
+        <br>
+        <br>
+        <button id="botonJugar">jugar</button>
+    </div>
+    <!-- PANTALLA 2 -->
+    <div class="ocultarElemento" id="pantalla2">
+        <h1 id="titulo"> Mi Trivia</h1>
+        <h2 id="saludo">Hola Karen</h2>
+        <div>
+            <div id="preguntasTipoAnimal">
+                <h2>preguntas de Animales</h2>
+                <div>
+                    <h3>1.¿Que Animal hace miau?</h3>
+                    <input class="radioPregunta" type="radio" name="pregunta1" id="p1_1" value="gato">
+                    <label for="p1_1" id="res1">Gato</label>
+                    <br>
+                    <input class="radioPregunta" type="radio" name="pregunta1" id="p1_2" value="perro">
+                    <label for="p1_2">Perro</label>
+                    <br>
+                    <input class="radioPregunta" type="radio" name="pregunta1" id="p1_3" value="pato">
+                    <label for="p1_3">Pato</label>
+                </div>
+    
+                <div>
+                    <h3>2.¿Como dice el Perro?</h3>
+                    <input class="radioPregunta" type="radio" name="pregunta2" id="p2_1" value="guau">
+                    <label for="p2_1" id="res2">guau</label>
+                    <br>
+                    <input class="radioPregunta" type="radio" name="pregunta2" id="p2_2" value="cuac">
+                    <label for="p2_2">cuac</label>
+                    <br>
+                    <input class="radioPregunta" type="radio" name="pregunta2" id="p2_3" value="miau">
+                    <label for="p2_3">miau</label>
+                </div>
+                <div>
+                    <h3>3.¿Cuantos patas tiene el caballo?</h3>
+                    <input class="radioPregunta" type="radio" name="pregunta3" id="p3_1" value="2">
+                    <label for="p3_1">2</label>
+                    <br>
+                    <input class="radioPregunta" type="radio" name="pregunta3" id="p3_2" value="3">
+                    <label for="p3_2">3</label>
+                    <br>
+                    <input class="radioPregunta" type="radio" name="pregunta3" id="p3_3" value="4">
+                    <label id="res3" for="p3_3">4</label>
+                </div>
+            </div>
+                <!-- pantalla2.1 -->
+            <div id="preguntasTipoArtefacto">
+                <h2>preguntas de Artefacto</h2>
+                <div>
+                    <h3>1.¿Que utilizamos para Cortar?</h3>
+                    <input class="radioPregunta3" type="radio" name="pregunta1" id="p1_3" value="secadora">
+                    <label for="p1_3" id="res1">Secadora</label>
+                    <br>
+                    <input class="radioPregunta3" type="radio" name="pregunta1" id="p1_2" value="tijera">
+                    <label for="p1_2">Tijera</label>
+                    <br>
+                    <input class="radioPregunta" type="radio" name="pregunta1" id="p1_3" value="licuadora">
+                    <label for="p1_3">Licuadora</label>
+                </div>
+    
+                <div>
+                    <h3>2.¿Que Utilizamos Para Freir?</h3>
+                    <input class="radioPregunta" type="radio" name="pregunta2" id="p2_1" value="sarten">
+                    <label for="p2_1" id="res2">sarten</label>
+                    <br>
+                    <input class="radioPregunta" type="radio" name="pregunta2" id="p2_2" value="secadora">
+                    <label for="p2_2">secadora</label>
+                    <br>
+                    <input class="radioPregunta" type="radio" name="pregunta2" id="p2_3" value="televisor">
+                    <label for="p2_3">Televisor</label>
+                </div>
+                <div>
+                    <h3>3.¿Que Utilizamos para saber la Hora?</h3>
+                    <input class="radioPregunta" type="radio" name="pregunta3" id="p3_1" value="termometro">
+                    <label for="p3_1">Termometro</label>
+                    <br>
+                    <input class="radioPregunta" type="radio" name="pregunta3" id="p3_2" value="hora">
+                    <label for="p3_2">Hora</label>
+                    <br>
+                    <input class="radioPregunta" type="radio" name="pregunta3" id="p3_3" value="sol">
+                    <label id="res3" for="p3_3">Sol</label>
+                </div>
+            </div>
+
+            <br>
+            <button id="btnRespuesta">Ver Respuesta</button>
+
+            <button id="botonVolver">volver</button>
+
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
