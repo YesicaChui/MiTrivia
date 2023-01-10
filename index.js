@@ -44,16 +44,20 @@ let verRespuesta = () => {
     let respuesta1 = "correcta"
     let respuesta2 = "correcta"
     let respuesta3 = "correcta"
+    let puntaje = 30
     if (alternativaSeleccionadoP1.value != respuestasCorrectas[0]) {
         respuesta1 = "incorrecta"
+        puntaje-=10
     }
     if (alternativaSeleccionadoP2.value != respuestasCorrectas[1]) {
         respuesta2 = "incorrecta"
+        puntaje-=10
     }
     if (alternativaSeleccionadoP3.value != respuestasCorrectas[3]) {
         respuesta3 = "incorrecta"
+        puntaje-=10
     }
-    alert(`Pregunta Nº1:${respuesta1}\nPregunta Nº2:${respuesta2}\nPregunta Nº3:${respuesta3}`)
+    alert(`Pregunta Nº1:${respuesta1}\nPregunta Nº2:${respuesta2}\nPregunta Nº3:${respuesta3}\nPuntaje total:${puntaje}`)
 
     /* alert(`La alternativa seleccionada de la pregunta1 es ${alternativaSeleccionadoP1.value} y la respuesta es gato\nLa alternativa seleccionada de la pregunta2 es ${alternativaSeleccionadoP2.value} y la respuesta es guau`)
  */}
@@ -71,6 +75,11 @@ let volver = () => {
     let respuestasCorrectas = document.getElementsByClassName("respuestaCorrecta")
     for(let respuestaCorrecta of respuestasCorrectas){
         respuestaCorrecta.style.color = "black"
+    }
+
+    let radios = document.querySelectorAll("input[type=radio]")
+    for(let radio of radios){
+        radio.checked = false
     }
 }
 
