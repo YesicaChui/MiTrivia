@@ -32,6 +32,7 @@ let tituloPrincipal = document.getElementById("titulo")
 tituloPrincipal.addEventListener("click", mostrarAlert) */
 
 let verRespuesta = () => {
+    clearInterval(timerId)
     MostrarRespuestas()
     let alternativaSeleccionadoP1 = document.querySelector("input[name=pregunta1]:checked")
     let alternativaSeleccionadoP2 = document.querySelector("input[name=pregunta2]:checked")
