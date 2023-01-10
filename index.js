@@ -81,6 +81,8 @@ let volver = () => {
     for(let radio of radios){
         radio.checked = false
     }
+
+    clearInterval(timerId)
 }
 
 let irPantalla2 = () => {
@@ -100,7 +102,7 @@ let iniciarJuego = () => {
         saludo.innerHTML = `Hola ${inputNombre.value.toUpperCase()}`
         irPantalla2()
         preguntaEleccion()
-
+        iniciarConteo()
     }
 
 
@@ -170,5 +172,24 @@ botonVolver.addEventListener("click", volver/* cambiarPantalla */)
 let tipoArtefacto = document.querySelector("#tipoArtefactos")
 tipoArtefacto.addEventListener("click", preguntaEleccion)
 
+function disminucionTiempo(){
+    conteo-=1
+    mireloj.innerHTML = `Tienes ${conteo} segundos para responder las preguntas`
+    if(conteo==0){
+        clearInterval(timerId)
+        alert("Tu tiempo ha terminado")
+        verRespuesta()
+    }
+}
 
 
+
+let timerId 
+let conteo
+function iniciarConteo(){
+    conteo = 10
+    let mireloj = document.getElementById("mireloj")
+    mireloj.innerHTML = `Tienes ${conteo} segundos para responder las preguntas`
+    timerId= setInterval(() => disminucionTiempo(), 1000);
+}
+//clearInterval(timerId);
